@@ -68,7 +68,7 @@ def main():
         print("OOD: ", OOD_Dataset[i])
         if args.InD_Dataset == "Cifar_10":
             net_name = "densenet10"
-            net_ODIN = torch.load("./ODIN/models/{}.pth".format(net_name))  ## TODO
+            net_ODIN = torch.load("./models/{}.pth".format(net_name))  ## TODO
             print("successfully load model", net_name)
         
         else:

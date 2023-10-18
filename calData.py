@@ -31,10 +31,10 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 def testData_ODIN(net1, criterion, CUDA_DEVICE, testloader10, testloader, dataName, noiseMagnitude1, temper):
     t0 = time.time()
-    f1 = open("./ODIN/softmax_scores/confidence_Base_In.txt", 'w')
-    f2 = open("./ODIN/softmax_scores/confidence_Base_Out.txt", 'w')
-    g1 = open("./ODIN/softmax_scores/confidence_Our_In.txt", 'w')
-    g2 = open("./ODIN/softmax_scores/confidence_Our_Out.txt", 'w')
+    f1 = open("./softmax_scores/confidence_Base_In.txt", 'w')
+    f2 = open("./softmax_scores/confidence_Base_Out.txt", 'w')
+    g1 = open("./softmax_scores/confidence_Our_In.txt", 'w')
+    g2 = open("./softmax_scores/confidence_Our_Out.txt", 'w')
     N = 10000
     # if dataName == "iSUN":
     #     N = 8925
