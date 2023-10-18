@@ -8,10 +8,10 @@
 #SBATCH --mail-user=rivachen@umich.edu
 #SBATCH --mail-type=BEGIN,END,FAIL
 #SBATCH --partition=standard
-#SBATCH --output=/home/rivachen/OOD_learning_GP_models_in_R/results.log
+#SBATCH --output=/home/rivachen/ODIN-comparison-test/results.log
 
 # module purge
 # conda init bash
-# conda activate GP
+conda activate GP
 
 python ODIN.py 'MNIST' 128 128 0
