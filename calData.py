@@ -69,7 +69,10 @@ def testData_ODIN(net1, criterion, CUDA_DEVICE, testloader10, testloader, dataNa
         # Calculating the perturbation we need to add, that is,
         # the sign of gradient of cross entropy loss w.r.t. input
         maxIndexTemp = np.argmax(nnOutputs)
-        labels = Variable(torch.LongTensor([maxIndexTemp]).cuda(CUDA_DEVICE))
+        # labels = Variable(torch.LongTensor([maxIndexTemp]).cuda(CUDA_DEVICE))
+        labels = Variable(torch.LongTensor([maxIndexTemp]))
+        labels.to(device)
+
         loss = criterion(outputs, labels)
         loss.backward()
 
@@ -120,7 +123,9 @@ def testData_ODIN(net1, criterion, CUDA_DEVICE, testloader10, testloader, dataNa
             continue
         images, _ = data
 
-        inputs = Variable(images.cuda(CUDA_DEVICE), requires_grad=True)
+        # inputs = Variable(images.cuda(CUDA_DEVICE), requires_grad=True)
+        inputs = Variable(images.to(device), requires_grad=True)
+
         if dataName == 'Cifar_10':
             outputs = net1(inputs)
         else:
@@ -141,7 +146,9 @@ def testData_ODIN(net1, criterion, CUDA_DEVICE, testloader10, testloader, dataNa
         # Calculating the perturbation we need to add, that is,
         # the sign of gradient of cross entropy loss w.r.t. input
         maxIndexTemp = np.argmax(nnOutputs)
-        labels = Variable(torch.LongTensor([maxIndexTemp]).cuda(CUDA_DEVICE))
+        # labels = Variable(torch.LongTensor([maxIndexTemp]).cuda(CUDA_DEVICE))
+        labels = Variable(torch.LongTensor([maxIndexTemp]))
+        labels.to(device)
         loss = criterion(outputs, labels)
         loss.backward()
 
