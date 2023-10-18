@@ -131,13 +131,13 @@ def TinyImagenet_c_dataset(batch_size, test_batch_size, into_grey = False):
                                         # transforms.Normalize((0.5,), (0.5,))
                                         ])
     
-    train_datasets = datasets.ImageFolder(os.path.join('./data/tiny-imagenet-200', 'train'), transform=transform) 
-    train_loader = torch.utils.data.DataLoader(train_datasets, batch_size=batch_size, shuffle=True)
+    # train_datasets = datasets.ImageFolder(os.path.join('./data/tiny-imagenet-200', 'train'), transform=transform) 
+    # train_loader = torch.utils.data.DataLoader(train_datasets, batch_size=batch_size, shuffle=True)
     
     test_datasets = datasets.ImageFolder(os.path.join('./data/tiny-imagenet-200', 'test'), transform=transform) 
     test_loader = torch.utils.data.DataLoader(test_datasets, batch_size=test_batch_size, shuffle=True)
     
-    return train_datasets, test_datasets, train_loader, test_loader
+    return None, test_datasets, None, test_loader
     
     
     
