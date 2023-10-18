@@ -10,8 +10,8 @@
 #SBATCH --partition=standard
 #SBATCH --output=/home/rivachen/ODIN-comparison-test/results.log
 
-module purge
-conda init bash
-conda activate GP
+# module purge
+# conda init bash
+source activate GP
 
 python ODIN.py 'MNIST' 128 128 0
