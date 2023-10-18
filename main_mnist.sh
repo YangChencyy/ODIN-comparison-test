@@ -8,7 +8,7 @@
 #SBATCH --mail-user=rivachen@umich.edu
 #SBATCH --mail-type=BEGIN,END,FAIL
 #SBATCH --partition=standard
-#SBATCH --output=/home/rivachen/ODIN-comparison-test/results.log
+#SBATCH --output=/home/rivachen/ODIN-comparison-test/mnist_results.log
 
 # module purge
 # conda init bash
