@@ -31,7 +31,7 @@ def main():
     parser.add_argument("InD_Dataset", type=str, help="The name of the InD dataset.")
     parser.add_argument("train_batch_size", type=int, help="train_batch_size")
     parser.add_argument("test_batch_size", type=int, help="test_batch_size")
-    parser.add_argument("gpu", type=int, help="number of gpu")
+    # parser.add_argument("gpu", type=int, help="number of gpu")
 
     # Parse the command-line arguments
     args = parser.parse_args()
@@ -81,7 +81,7 @@ def main():
         ood_l = torch.utils.data.DataLoader(OOD_sets[i],
                                         batch_size=1, shuffle=True)
         
-        testData_ODIN(net_ODIN, criterion_ODIN, args.gpu, tr_l, ood_l, args.InD_Dataset,
+        testData_ODIN(net_ODIN, criterion_ODIN, tr_l, ood_l, args.InD_Dataset,
                     noiseMagnitude1 = 0.0014, temper = 1000)
         metric_ODIN(args.InD_Dataset, OOD_sets[i])
 
