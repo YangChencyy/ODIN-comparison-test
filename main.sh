@@ -10,7 +10,7 @@
 #SBATCH --partition=standard
 #SBATCH --output=/home/rivachen/ODIN-comparison-test/results.log
 
-# module purge
+module purge
 conda init bash
 conda activate GP
 
