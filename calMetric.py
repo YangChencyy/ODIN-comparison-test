@@ -384,7 +384,7 @@ def metric_ODIN(indis, dataName):
     print("")
     print("{:>34}{:>19}".format("Baseline", "Our Method"))
     print("{:20}{:13.1f}%{:>18.1f}% ".format(
-        "FPR at TPR 95%:", fprBase*100, fprNew*100))
+        "FPR at TPR 90%:", fprBase*100, fprNew*100))
     print("{:20}{:13.1f}%{:>18.1f}%".format(
         "Detection error:", errorBase*100, errorNew*100))
     print("{:20}{:13.1f}%{:>18.1f}%".format(

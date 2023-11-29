@@ -72,6 +72,7 @@ def testData_ODIN(net1, criterion, testloader10, testloader, dataName, noiseMagn
         # labels = Variable(torch.LongTensor([maxIndexTemp]).cuda(CUDA_DEVICE))
         labels = Variable(torch.LongTensor([maxIndexTemp]))
         labels.to(device)
+        outputs.to(device)
 
         loss = criterion(outputs, labels)
         loss.backward()
@@ -92,10 +93,7 @@ def testData_ODIN(net1, criterion, testloader10, testloader, dataName, noiseMagn
         # Adding small perturbations to images
         tempInputs = torch.add(inputs.data,  -noiseMagnitude1, gradient)
 
-        if dataName == 'Cifar_10':
-            outputs = net1(Variable(tempInputs))
-        else:
-            _, outputs = net1(Variable(tempInputs))
+        
             
         outputs = outputs / temper
         # Calculating the confidence after adding perturbations
