@@ -73,6 +73,7 @@ def testData_ODIN(net1, criterion, testloader10, testloader, dataName, noiseMagn
         labels = Variable(torch.LongTensor([maxIndexTemp]))
         labels.to(device)
         outputs.to(device)
+        print(device)
         print(outputs.device, labels.device)
         loss = criterion(outputs, labels)
         loss.backward()
