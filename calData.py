@@ -147,7 +147,8 @@ def testData_ODIN(net1, criterion, testloader10, testloader, dataName, noiseMagn
         maxIndexTemp = np.argmax(nnOutputs)
         # labels = Variable(torch.LongTensor([maxIndexTemp]).cuda(CUDA_DEVICE))
         labels = Variable(torch.LongTensor([maxIndexTemp]))
-        labels.to(device)
+        labels = labels.to(device)
+        outputs = outputs.to(device)
         loss = criterion(outputs, labels)
         loss.backward()
 
